@@ -43,8 +43,8 @@
 }
 #close_dialog_btn {
   position: fixed !important;
-  top: 32px;
-  right: 32px;
+  top: 32px !important;
+  right: 32px !important;
   z-index: 999;
   -webkit-text-stroke: 1px white;
   top: 8px;
