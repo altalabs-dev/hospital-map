@@ -103,7 +103,7 @@ function setMarkers(items) {
   onAddData(items);
 
   bounds = new google.maps.LatLngBounds();
-  title.innerHTML = "Store list";
+  title.innerHTML = "Hospital list";
   const node = document.createElement("span");
   node.innerHTML = ` (${items.length} results)`;
   title.appendChild(node);
