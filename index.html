@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body">
+    <div class="row no-gutters h-100 w-100">
+        <div class="col-md-3 col-sm-12 col-12">
+            <div class="row w-100 no-gutters">
+                <div class="col-11 col-sm-11 px-2 mt-2" id="search_container">
+                    <select name="homepoint" id="homepoint" class="w-100 h-100 form-control">
+                        <option value="">All Home Points</option>
+                        <option value="60119">60119</option>
+                        <option value="53821">53821</option>
+                        <option value="08088">08088</option>
+                        <option value="40503">Lexington KY</option>
+                        <option value="08008">Long Beach Township, New Jersey</option>
+                    </select>
+                </div>
+                <div class="col-1 col-sm-1 pr-2 my-2">
+                    <div class="w-100 h-100" id="dialog_btn"
+                        style="position:relative !important;border-radius: 0px;background-color: transparent;">
+                        <i class="icon fa fa-table icon-table icon-center"
+                            style="left:50% !important;-webkit-text-stroke: 0.2px ;"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12 mt-2 px-2">
+                    <h3 class="title my-0 px-2" id="title" style="font-size:14px" id="search-result">Store list</h3>
+                </div>
+                <div class="col-sm-12 mt-2 list-store" id="list-store">
+                </div>
+            </div>
+        </div>
+
+        <dialog class="rounded-sm shadow-md w-100 h-100" id="dialog">
+            <h2 class="mb-4 text-3xl text-gray-500 font-bold pl-2">
+                <div> Hospitals Data</div>
+                <i class="icon fa fa-remove fa-sm icon-close" id="close_dialog_btn"></i>
+            </h2>
+            <div class="tableFixHead">
+                <table style="width:100%; height:100%" id="table">
+                    <thead id="table_header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Total Patient Revenue</th>
+                            <th>Outpatient Revenue</th>
+                            <th>Inpatent Revenue</th>
+                            <th>Annual Revenue</th>
+                            <th>Billing City</th>
+                            <th>Billing State</th>
+                            <th>Billing Postal Code</th>
+                            <th>Billing Country</th>
+                            <th>Region Owner</th>
+                            <th>Total Medicicare Beneficiaries</th>
+                            <th>Medicare CKD Patients</th>
+                            <th>Medicare Congestive Heart Disease Patients</th>
+                            <th>Medicare COPD Patients</th>
+                            <th>Medicare Diabetes Patients</th>
+                            <th>Medicare Hyptension Patients</th>
+                            <th>Medicare IHD Patients</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_body"></tbody>
+                </table>
+            </div>
+        </dialog>
+
+        <div class="col-md-9 col-sm-12 col-12">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript"
+        src="//maps.googleapis.com/maps/api/js?key=AIzaSyCn33GI9WY-wog7Ct6xf57HjNMYOFEW-bk&libraries=geometry"></script>
+    <script type="module" src="index.js"></script>
+    </body>
+
+</html>
