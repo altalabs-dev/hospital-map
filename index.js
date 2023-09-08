@@ -85,8 +85,20 @@ function setListStores(item, marker, infoWindow) {
                                     <div class="text-dark">${icon_marker} <span style="font-size:14px; font-weight: 500">${location}</span></div>`;
   if (item.AnnualRevenue)
     item_content += `<div>${icon_money} <span style="font-size:14px; font-weight: 500">${item.AnnualRevenue}</span></div>`;
-  if (item.Region_Owner__c)
-    item_content += `<div>${icon_owner} <span style="font-size:14px; font-weight: 500">${item.Region_Owner__c}</span></div>`;
+  item_content += `<div class="row" style="font-size:12px; font-weight: 500">
+    <div class="col-10 col-sm-10 pt-1" style="font-weight: 600">Medicare CKD Patients </div>
+    <div class="col-2 col-sm-2 px-0" style="color: gray">${item.Medicare_CKD_Patients__c}</div>
+    <div class="col-10 col-sm-10 pt-1" style="font-weight: 600">Medicare Congestive Heart Disease Patients </div>
+    <div class="col-2 col-sm-2 px-0" style="color: gray">${item.Medicare_Congestive_Heart_Disease_Patien__c}</div>
+    <div class="col-10 col-sm-10 pt-1" style="font-weight: 600">Medicare COPD Patients </div>
+    <div class="col-2 col-sm-2 px-0" style="color: gray">${item.Medicare_COPD_Patients__c}</div>
+    <div class="col-10 col-sm-10 pt-1" style="font-weight: 600">Medicare Diabetes Patients </div>
+    <div class="col-2 col-sm-2 px-0" style="color: gray">${item.Medicare_Diabetes_Patients__c}</div>
+    <div class="col-10 col-sm-10 pt-1" style="font-weight: 600">Medicare Hyptension Patients </div>
+    <div class="col-2 col-sm-2 px-0" style="color: gray">${item.Medicare_Hyptension_Patients__c}</div>
+    <div class="col-10 col-sm-10 pt-1" style="font-weight: 600">Medicare IHD Patients </div>
+    <div class="col-2 col-sm-2 px-0" style="color: gray">${item.Medicare_IHD_Patients__c}</div>
+  </div>`;
   item_content += "</div>";
   const node = document.createElement("div");
   node.className = "row flex-row px-2 card";
