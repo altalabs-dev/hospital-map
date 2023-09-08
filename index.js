@@ -106,9 +106,9 @@ function setListStores(item, marker, infoWindow) {
   for (const medicare of medicares) {
     if (parseInt(item[medicare.key])) {
       item_content += `<div class="col-10 col-sm-10 pt-1" style="font-weight: 600">${medicare.text}</div>`;
-      item_content += `<div class="col-2 col-sm-2 px-0" style="color: gray">${
+      item_content += `<div class="col-2 col-sm-2 px-0" style="color: gray">${numberWithCommas(
         item[medicare.key]
-      }</div>`;
+      )}</div>`;
     }
   }
   item_content += "</div>";
@@ -243,4 +243,8 @@ function onAddData(items) {
       table_body.appendChild(row);
     }
   }
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
