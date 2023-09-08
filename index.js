@@ -83,8 +83,8 @@ function setListStores(item, marker, infoWindow) {
   let item_content = `<div class="col-12 col-sm-12 pr-0 pb-4 pt-2">
                                     <div style="font-size:18px; font-weight: 700; color: gray">${item.Name}</div>
                                     <div class="text-dark">${icon_marker} <span style="font-size:14px; font-weight: 500">${location}</span></div>`;
-  if (item.Total_Patient_Revenue__c)
-    item_content += `<div>${icon_money} <span style="font-size:14px; font-weight: 500">${item.Total_Patient_Revenue__c}</span></div>`;
+  if (item.AnnualRevenue)
+    item_content += `<div>${icon_money} <span style="font-size:14px; font-weight: 500">${item.AnnualRevenue}</span></div>`;
   if (item.Region_Owner__c)
     item_content += `<div>${icon_owner} <span style="font-size:14px; font-weight: 500">${item.Region_Owner__c}</span></div>`;
   item_content += "</div>";
