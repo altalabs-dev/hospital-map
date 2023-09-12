@@ -248,3 +248,30 @@ function onAddData(items) {
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+async function getLatLngFromData() {
+  const items = await fetch("./new.json").then((res) => res.json());
+  for (const key in items) {
+    if (items[key].BillingPostalCode) {
+      geocoder.geocode(
+        {
+          componentRestrictions: {
+            country: "US",
+            postalCode: items[key].BillingPostalCode,
+          },
+        },
+        function (results, status) {
+          if (status == "OK") {
+            const latLng = results[0].geometry.location;
+            items[key].Latitude = latLng.lat();
+            items[key].Longtitude = latLng.lng();
+          } else {
+            window.alert(
+              "Geocode was not successful for the following reason: " + status
+            );
+          }
+        }
+      );
+    }
+  }
+}
