@@ -1,7 +1,7 @@
 var map;
 var geocoder = new google.maps.Geocoder();
 var infoWindow = new google.maps.InfoWindow({
-  // disableAutoPan: true,
+  disableAutoPan: true,
 });
 var center = new google.maps.LatLng(38.78436574258653, -77.0150403423293);
 var bounds;
